@@ -16,18 +16,16 @@ See the PDF file for schematics.
 
 # PCB
 
-Designfiles in EAGLE format can be found in the `PCB` folder. Gerber files can be found in the `PCB/Gerbers` folder.
+Designfiles in EAGLE format can be found in the `pcb` folder. Gerber files can be found in the `pcb/Gerber` folder.
 
 # Firmwares
 
-Firmware for connecting the sensors to MQTT is present in the `firmware` folder.
-
-TODO: Add more firmware.
+Firmware for connecting sensors to MQTT through this board is in the [Arduino_GroveSensors_Firmware](https://github.com/jonnybergdahl/Arduino_GroveSensors_Firmware) repository. It includes sketches for the Grove CO2 sensor, the Grove Multichannel Gas Sensor and the ZH03B particle sensor.
 
 ## Connectors
 
 The QWIIC/Stemma QT port is connected to the default I2C pins of the TinyPICO, GPIO21 and GPIO22. 
 
-The Grove connector is connected to GPIO4 and GPIO5, so to use I2C you need initialize it with `Wire.Begin(5, 4)`.
+The Grove connector is connected to GPIO5 (SDA) and GPIO4 (SCL), so to use I2C you need to initialize it with `Wire.begin(5, 4)`.
 
 Note that the ESP32 allows you to assign any function to any pin, so any communication type is possible, like UART.
